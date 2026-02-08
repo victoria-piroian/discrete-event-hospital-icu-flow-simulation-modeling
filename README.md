@@ -11,10 +11,92 @@ This project presents a discrete-event simulation model of patient flow across h
 
 ---
 
-## Project Structure
-data/ # Raw hospital arrival and service-time datasets
-r_analysis/ # R scripts for statistical distribution fitting
-simio_models/ # Simio simulation model files
-notebooks/ # Data analysis and preprocessing notebooks
-outputs/ # Simulation results, plots, and performance metrics
-README.md # Project documentation
+## Key Features
+
+### Input Modeling
+- Time-dependent arrival modeling using hourly rate tables
+- Empirical estimation of ward-routing probabilities
+- Distribution fitting (Normal, Lognormal, Gamma, Weibull, Exponential)
+- QQ-plot validation and goodness-of-fit testing
+- Parameterized distributions implemented in Simio
+
+### Simulation Model
+- Four acute wards: Internal Medicine, Musculoskeletal, Neurology, Cardiovascular
+- ICU with limited bed capacity
+- Capacity constraints and queueing dynamics
+- Bed blocking behavior
+- ICU overflow and diversion logic
+- Probabilistic patient routing and crash modeling
+- Mortality and discharge pathways
+
+### Scenario Analysis
+- **Base Model:** Realistic hospital operations with capacity constraints
+- **Ward Consolidation Scenario:** Merged acute wards into a single generalized ward
+- **Diversion Policy Scenario:** Threshold-based diversion of arrivals under congestion
+- Ranking-and-selection optimization experiment
+- Objective function optimization:
+  
+  **Objective = Average Queue Length + 120 × Proportion of Diverted Arrivals**
+
+### Performance Metrics
+- Average waiting time per ward
+- Queue lengths
+- Bed utilization rates
+- ICU congestion levels
+- Bed blocking frequency
+- Diversion rates
+- External patient rejection rates
+- System throughput
+
+---
+
+## Evaluation
+- Comparative scenario performance analysis
+- Congestion and utilization metrics
+- Queue stability assessment
+- Optimization performance benchmarking
+- Bottleneck identification
+- Policy impact quantification
+
+---
+
+## Usage
+1. Clone the repository:
+```bash
+git clone <repo-url>
+```
+2. Run statistical modeling in R:
+- Fit arrival and service-time distributions
+- Generate distribution parameters
+
+3. Open Simio models:
+- Load fitted distributions
+- Run base model simulation
+- Execute scenario experiments
+- Run optimization experiments
+
+4. Analyze outputs:
+- Review congestion metrics
+- Compare scenario performance
+- Evaluate diversion policy effectiveness
+- Generate plots and reports from outputs folder
+
+---
+
+## Goals
+- Model realistic hospital patient flow dynamics
+- Identify operational bottlenecks
+- Evaluate structural policy changes (ward consolidation)
+- Optimize diversion strategies
+- Support data-driven hospital operations planning
+- Demonstrate simulation as a decision-support tool for healthcare systems
+
+---
+
+## Author
+
+Victoria Piroian
+
+University of Toronto
+
+Faculty of Applied Science & Engineering, 2023
