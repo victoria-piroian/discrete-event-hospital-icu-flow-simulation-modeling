@@ -99,4 +99,4 @@ Victoria Piroian
 
 University of Toronto
 
-Faculty of Applied Science & Engineering, 2023
+Faculty of Applied Science & Engineering, 2022
